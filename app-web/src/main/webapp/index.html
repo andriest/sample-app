@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample App</title>
+</head>
+<body class="lift:content_id=main">
+<div id="main" class="lift:Surround?with=main;at=content">
+    <head_merge>
+        <script class="text/javascript">
+            $(document).ready(function() {
+                $('table tr.content').click(function(e) {
+                    let id = $(e.currentTarget).attr("data-id");
+                    window.location.href = "/view/" + id
+                });
+            });
+        </script>
+    </head_merge>
+
+    <p class="add-button"><a href="/add">Add Data</a></p>
+    <div class="lift:Interface.getList"></div>
+</div>
+</body>
+</html>
